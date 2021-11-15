@@ -1,0 +1,123 @@
+h1 {
+  font-weight: bolder;
+}
+h4 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 -12px;
+}
+.btn-outline-secondary,
+.btn-celsius,
+.btn-fahrenheit {
+  border: 1px solid #6c757d;
+  color: #6c757d;
+  background-color: rgba(255, 255, 255, 0.384);
+  border-radius: 0.25rem;
+  height: 38px;
+}
+
+.btn-celsius:hover,
+.btn-fahrenheit:hover {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.card {
+  background: transparent;
+  border: none;
+}
+
+.card:hover {
+  color: #fff;
+  background-color: #6c757d49;
+  border-color: #6c757d49;
+  border-radius: 25px;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.card-titel {
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.container-md {
+  color: #6c757d;
+  position: relative;
+  width: 800px;
+  font-family: Montserat, sans-serif;
+  margin-top: 100px;
+  background: linear-gradient(
+    to bottom,
+    rgba(187, 124, 168, 0.65) 0%,
+    rgba(185, 133, 170, 0.65) 1%,
+    rgba(133, 133, 133, 0) 100%
+  );
+  border-radius: 30px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.075);
+}
+
+.details-now {
+  padding: 0;
+}
+
+.feels-like,
+.forecast-now {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.fore-city-now {
+  font-size: 16px;
+  padding: 10% 0 0 0;
+}
+
+.forecast-5days {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 2% 0;
+  text-align: center;
+}
+
+.img-week {
+  display: block;
+  margin: 0 auto;
+}
+
+.menu {
+  padding-right: 20px;
+}
+
+.search-input {
+  padding: 5% 5% 0 2%;
+}
+
+.temp-now,
+.city-now,
+.img-now,
+.weather1 {
+  padding-left: 5%;
+}
+.temp-now {
+  text-align: center;
+}
+
+.weather-content {
+  width: 720px;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+.weather1,
+.weather2 {
+  padding-bottom: 10%;
+}
+
+#forecast-now {
+  text-transform: capitalize;
+}
