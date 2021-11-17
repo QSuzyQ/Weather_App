@@ -1,53 +1,56 @@
 //Date & Time Input
+function formatDate(actualDate) {
+  let hours = actualDate.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
 
-let now = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
+  let minutes = actualDate.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
 
-let day = days[now.getDay()];
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[now.getMonth()];
-let date = now.getDate();
-let year = now.getFullYear();
-let currentDate = `${day}, ${month} ${date}, ${year}`;
-console.log(currentDate);
+  let dayIndex = actualDate.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[dayIndex];
+  let monthIndex = actualDate.getMonth();
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let month = months[monthIndex];
+  let date = actualDate.getDate();
+  let year = actualDate.getFullYear();
+  let currentTime = `${hours}:${minutes}`;
+  let currentDate = `${day}, ${month} ${date}, ${year}`;
+
+  return [currentDate, currentTime];
+}
+
 let rowDate = document.querySelector(".date");
-rowDate.innerHTML = `${currentDate}`;
+let rowTime = document.querySelector(".time");
+let actualDate = new Date();
 
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let currentTime = `${hours}:${minutes}`;
-console.log(currentTime);
-
-let rowTime = document.querySelector("#time");
-rowTime.innerHTML = `${currentTime}`;
+rowDate.innerHTML = formatDate(actualDate)[0];
+rowTime.innerHTML = formatDate(actualDate)[1];
 
 //Display weather by search form
 function searchCity(city) {
