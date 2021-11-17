@@ -60,7 +60,7 @@ function searchCity(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector(".form-control").value;
-  searchCity(city);
+  searchCity(cityInput);
 }
 
 function displayWeatherSearch(response) {
