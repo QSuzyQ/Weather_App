@@ -50,15 +50,17 @@ let rowTime = document.querySelector("#time");
 rowTime.innerHTML = `${currentTime}`;
 
 //Display weather by search form
-function enterCity(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector(".form-control");
-
+function searchCity(city) {
   let apiKey = "066545da4c8046912b00adb2744905ad";
   let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeatherSearch);
   console.log(apiUrl);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector(".form-control").value;
+  searchCity(city);
 }
 
 function displayWeatherSearch(response) {
@@ -89,7 +91,9 @@ function displayWeatherSearch(response) {
 }
 
 let inputForm = document.querySelector("#search-city");
-inputForm.addEventListener("submit", enterCity);
+inputForm.addEventListener("submit", handleSubmit);
+
+searchCity("Lagos");
 
 //Display weather by current postition button
 function showPosition(position) {
